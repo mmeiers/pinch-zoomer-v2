@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pinch Zoomer Image Viewer - Image Grid Example</title>
+<link href="css/prettify.min.css" type="text/css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="css/text.min.css" rel="stylesheet">
+<link href="css/pinchzoomer.min.css" rel="stylesheet">
+<link href="css/horizontal_scroll.min.css" rel="stylesheet">
+<link href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" />
+<script src="js/prettify.js" type="text/javascript" ></script>
+<script src="js/jquery-1.10.0.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/modernizr.min.js" type="text/javascript"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/jquery.hammer.min.js" type="text/javascript"></script>
+<script src="js/TweenMax.min.js" type="text/javascript"></script>
+<script src="js/jquery.pinchzoomer.min.js" type="text/javascript"></script>
+<script src="js/horizontal_scroll_example.js" type="text/javascript"></script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+<div class="container">
+    <div class="row-fluid text-center">
+        <h3><span class="pinchColor">PINCH</span><span class="zoomColor">ZOOM</span><span class="erColor">er</span> Horizontal Scroll Example</h3>
+        This example shows a common layout mostly used in image portfolios. This plugin takes the scroller to another level by adding multi-touch gestures to zoom the image so the users will be able to appreciate the image better.</div>
+    <div class="row-fluid text-center">
+        <div class="span12 infobox"> <strong>To use: </strong>On a touch device you can use<em> <strong>pinch to zoom</strong></em> or <em><strong>double tap</strong></em> and <strong>drag</strong> to move the zoomed image. On a PC you can use <strong><em>mousescroll to zoom</em></strong> or <em><strong>double click</strong></em> and <strong><em>drag</em></strong> to move the zoomed image. You can also use the <strong><em>zoom in/zoom out buttons</em></strong>. You can view other images by dragging the slider at the bottom of the images.</div>
+    </div>
+    <div id="image_grid" class="topPad">
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="scrollHolder" class="scrollHolder">
+                    <div class="imageHolder"> <img src="assets/1.jpg" data-elem="pinchzoomer" alt="img1"/> </div>
+                    <div class="imageHolder"> <img src="assets/2.jpg" data-elem="pinchzoomer" alt="img2"/> </div>
+                    <div class="imageHolder"> <img src="assets/3.jpg" data-elem="pinchzoomer" alt="img3"/> </div>
+                    <div class="imageHolder"> <img src="assets/4.jpg" data-elem="pinchzoomer" alt="img4"/> </div>
+                    <div class="imageHolder"> <img src="assets/5.jpg" data-elem="pinchzoomer" alt="img5"/> </div>
+                    <div class="imageHolder"> <img src="assets/6.jpg" data-elem="pinchzoomer" alt="img6"/> </div>
+                </div>
+                <div id="slider" class="smallPad"></div>
+            </div>
+        </div>
+    </div>
+    <div id="htmlDesc" class="row-fluid">
+        <div class="span12 text-left topPad"> HTML
+            <pre id="htmlCode" class="prettyprint linenums codeHeight">&lt;div class=&quot;imageHolder&quot;&gt;<br>   &lt;img src=&quot;assets/1.jpg&quot; data-elem=&quot;pinchzoomer&quot;/&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;imageHolder&quot;&gt;<br>   &lt;img src=&quot;assets/2.jpg&quot; data-elem=&quot;pinchzoomer&quot;/&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;imageHolder&quot;&gt;<br>   &lt;img src=&quot;assets/3.jpg&quot; data-elem=&quot;pinchzoomer&quot;/&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;imageHolder&quot;&gt;<br>   &lt;img src=&quot;assets/4.jpg&quot; data-elem=&quot;pinchzoomer&quot;/&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;imageHolder&quot;&gt;<br>   &lt;img src=&quot;assets/5.jpg&quot; data-elem=&quot;pinchzoomer&quot;/&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;imageHolder&quot;&gt;<br>   &lt;img src=&quot;assets/6.jpg&quot; data-elem=&quot;pinchzoomer&quot;/&gt;<br>&lt;/div&gt;</pre>
+        </div>
+    </div>
+    <div id="cssDesc" class="row-fluid topPad">
+        <div class="span12 text-left"> CSS
+            <pre id="cssCode" class="prettyprint linenums codeHeight">
+.zoomInOn, .zoomInOff, .zoomOutOn, .zoomOutOff
+{
+   width:34px;
+   height:34px;
+   display:block;
+   position:absolute;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.zoomInOn, .zoomInOff
+{
+   background-image:url(../assets/zoom_in.png);
+   top:10px;
+   right:10px;
+}
+
+.zoomOutOn, .zoomOutOff
+{
+   background-image:url(../assets/zoom_out.png);
+   top:52px;
+   right:10px;
+}
+
+.zoomInOn, .zoomOutOn
+{
+   opacity:1;
+   cursor:pointer;
+}
+
+.zoomInOff, .zoomOutOff
+{
+   opacity:0.3;
+   cursor:auto;
+}
+
+.imageHolder
+{
+   width:50%;
+   position:relative;
+   margin-top:10px;
+   margin-bottom:10px;
+   display:inline-block;
+   *display: inline;
+   zoom: 1;
+}
+
+@media (max-width: 480px) 
+{
+   .imageHolder
+   {
+      width:100%;
+      position:relative;
+      margin-top:10px;
+      margin-bottom:10px;
+      display:inline-block;
+   }
+}</pre>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="row-fluid">
+            <div class="span2 offset3 text-center footerLink"><a href="http://codecanyon.net/user/ronfeliciano/?ref=ronfeliciano" target="_blank">CONTACT</a></div>
+            <div class="span2 text-center footerLink"><a href="http://codecanyon.net/user/ronfeliciano/portfolio/?ref=ronfeliciano" target="_blank">VISIT PORTFOLIO</a></div>
+            <div class="span2 text-center footerLink"><a href="#">BACK TO TOP</a></div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12 text-center footerCopyright">Copyright © 2013. All Rights Reserved. Ron Feliciano</div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

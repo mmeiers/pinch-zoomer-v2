@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pinch Zoomer Image Viewer - Image Grid Example</title>
+<link href="css/prettify.min.css" type="text/css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="css/text.min.css" rel="stylesheet">
+<link href="css/pinchzoomer.min.css" rel="stylesheet">
+<link href="css/image_grid.min.css" rel="stylesheet">
+<script src="js/prettify.js" type="text/javascript" ></script>
+<script src="js/jquery-1.10.0.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/modernizr.min.js" type="text/javascript"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/jquery.hammer.min.js" type="text/javascript"></script>
+<script src="js/TweenMax.min.js" type="text/javascript"></script>
+<script src="js/jquery.pinchzoomer.min.js" type="text/javascript"></script>
+<script src="js/remove_example.js" type="text/javascript"></script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+<div class="container">
+    <div class="row-fluid text-center">
+        <h3>Remove <span class="pinchColor">PINCH</span><span class="zoomColor">ZOOM</span><span class="erColor">er</span> Instances Example</h3>
+        This example shows how to remove PinchZoomer instances using jQuery. This is useful if you want to remove specific images or all images with zoom capability. To see it in action simply press &quot;Remove Image&quot; button on each image or &quot;Remove All&quot; button. For more info on the code see <a href="js/remove_example.js">js/remove_example.js</a></div>
+    <div class="row-fluid text-center">
+        <div id="infoBox" class="span12 infobox" style="display:none"> <strong>To use: </strong>On a touch device you can use<em> <strong>pinch to zoom</strong></em> and <strong>drag</strong> to move the zoomed image. On a PC you can use <strong><em>mousescroll to zoom</em></strong> and <strong><em>drag</em></strong> to move the zoomed image. </div>
+    </div>
+    <div id="buttonHolder" class="text-center">
+        <input id="removeAllButton" name="removeAllButton" type="button" value="Remove All">
+    </div>
+    <div id="image_grid">
+        <div class="row-fluid text-center">
+            <div class="span4">
+                <div id="imageHolder1" class="imageHolder"> <img id="img1" src="assets/1.jpg" data-elem="pinchzoomer" alt="img1"/>
+                    <input id="removeImage1" name="removeImage1" type="button" value="Remove Image">
+                </div>
+            </div>
+            <div class="span4">
+                <div id="imageHolder2" class="imageHolder"> <img id="img2" src="assets/2.jpg" data-elem="pinchzoomer" alt="img2"/>
+                    <input id="removeImage2" name="removeImage2" type="button" value="Remove Image">
+                </div>
+            </div>
+            <div class="span4">
+                <div id="imageHolder3" class="imageHolder"> <img id="img3" src="assets/3.jpg" data-elem="pinchzoomer" alt="img3"/>
+                    <input id="removeImage3" name="removeImage3" type="button" value="Remove Image">
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid text-center">
+            <div class="span4">
+                <div id="imageHolder4" class="imageHolder"> <img id="img4" src="assets/4.jpg" data-elem="pinchzoomer" alt="img4"/>
+                    <input id="removeImage4" name="removeImage4" type="button" value="Remove Image">
+                </div>
+            </div>
+            <div class="span4">
+                <div id="imageHolder5" class="imageHolder"> <img id="img5" src="assets/5.jpg" data-elem="pinchzoomer" alt="img5"/>
+                    <input id="removeImage5" name="removeImage5" type="button" value="Remove Image">
+                </div>
+            </div>
+            <div class="span4">
+                <div id="imageHolder6" class="imageHolder"> <img id="img6" src="assets/6.jpg" data-elem="pinchzoomer" alt="img6"/>
+                    <input id="removeImage6" name="removeImage6" type="button" value="Remove Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="row-fluid">
+            <div class="span2 offset3 text-center footerLink"><a href="http://codecanyon.net/user/ronfeliciano/?ref=ronfeliciano" target="_blank">CONTACT</a></div>
+            <div class="span2 text-center footerLink"><a href="http://codecanyon.net/user/ronfeliciano/portfolio/?ref=ronfeliciano" target="_blank">VISIT PORTFOLIO</a></div>
+            <div class="span2 text-center footerLink"><a href="#">BACK TO TOP</a></div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12 text-center footerCopyright">Copyright © 2013. All Rights Reserved. Ron Feliciano</div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

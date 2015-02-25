@@ -1,0 +1,87 @@
+.navtab1
+{
+	margin-left:20px;	
+}
+
+.navtab2
+{
+	margin-left:40px;	
+}
+
+.navtab3
+{
+	margin-left:60px;	
+}
+.gsnav
+{
+	list-style:none;
+}
+
+.gsnav > li
+{
+	padding:3px;
+}
+
+.backToTop
+{
+	font-size:12px;
+	font-weight:normal;
+	color:#999999;	
+}
+
+.verticalPad
+{
+	padding-top:10px;
+	padding-bottom:10px;	
+}
+
+.note
+{
+	background-color:#F0EDCA;
+	border:1px solid #9E7E3E;	
+	padding:10px;
+	font-style:italic;
+}
+
+#heightWarning
+{
+	color:#C33;
+}
+
+.customZoomInOn, .customZoomInOff, .customZoomOutOn, .customZoomOutOff
+{
+	width:86px;
+	height:22px;
+	display:block;
+	position:absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.customZoomInOn, .customZoomInOff
+{
+	background-image:url(../assets/custom_zoom_in.png);
+	bottom:10px;
+	left:50%;
+}
+
+.customZoomOutOn, .customZoomOutOff
+{
+	background-image:url(../assets/custom_zoom_out.png);
+	bottom:10px;
+	right:50%;
+}
+
+.customZoomInOn, .customZoomOutOn
+{
+	opacity:1;
+	cursor:pointer;
+}
+
+.customZoomInOff, .customZoomOutOff
+{
+	opacity:0.3;
+	cursor:auto;
+}
